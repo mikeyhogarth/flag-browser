@@ -1,0 +1,23 @@
+.App {
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.flagDisplay {
+  display: block;
+  height: 18em;
+}
+
+.navDisplay {
+  clear: both;
+}
+
+button {
+  padding: 1em 2em;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 0;
+  border: 1px solid black;
+  margin: 0.2em;
+}
