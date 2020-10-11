@@ -2,6 +2,7 @@
   "name": "flags-browser",
   "version": "0.1.0",
   "private": true,
+  "license": "GPL-3.0-only",
   "dependencies": {
     "@reduxjs/toolkit": "^1.1.0",
     "@testing-library/jest-dom": "^4.2.4",

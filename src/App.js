@@ -33,7 +33,7 @@ function App() {
       <div className="navDisplay">
         {!hidden && (
           <button onClick={() => dispatch(hideName())} className="revealButton">
-            Hide
+            Hide Name
           </button>
         )}
         {hidden && (
@@ -41,7 +41,7 @@ function App() {
             onClick={() => dispatch(revealName())}
             className="revealButton"
           >
-            Reveal
+            Reveal Name
           </button>
         )}
 
