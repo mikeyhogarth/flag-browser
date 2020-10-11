@@ -4,22 +4,23 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   nextFlag,
   previousFlag,
+  randomFlag,
+  revealName,
+  hideName,
   selectCountryCode,
   selectCountryName,
-  goToLetter,
+  selectNameHidden,
 } from "./reducers/flags.reducer";
-
-const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWYZ".split("");
 
 function App() {
   const countryCode = useSelector(selectCountryCode);
   const countryName = useSelector(selectCountryName);
+  const hidden = useSelector(selectNameHidden);
 
   const dispatch = useDispatch();
 
   return (
     <div className="App">
-      <h1>UN Member Flags</h1>
       <div className="flagDisplay">
         <img
           width="200"
@@ -27,10 +28,24 @@ function App() {
           className="flag"
           src={`/svg/${countryCode}.svg`}
         ></img>
-        <h1>{countryName}</h1>
+        <h1>{hidden ? "???" : countryName}</h1>
       </div>
 
       <div className="navDisplay">
+        {!hidden && (
+          <button onClick={() => dispatch(hideName())} className="revealButton">
+            Hide Name
+          </button>
+        )}
+        {hidden && (
+          <button
+            onClick={() => dispatch(revealName())}
+            className="revealButton"
+          >
+            Reveal Name
+          </button>
+        )}
+
         <nav>
           <button
             onClick={() => dispatch(previousFlag())}
@@ -38,20 +53,15 @@ function App() {
           >
             Previous
           </button>
-
+          <button
+            onClick={() => dispatch(randomFlag())}
+            className="randomButton"
+          >
+            Random
+          </button>
           <button onClick={() => dispatch(nextFlag())} className="nextButton">
             Next
           </button>
-
-          <h2>Go to letter...</h2>
-
-          {alphabet.map((letter) => {
-            return (
-              <button key={letter} onClick={() => dispatch(goToLetter(letter))}>
-                {letter}
-              </button>
-            );
-          })}
         </nav>
       </div>
     </div>

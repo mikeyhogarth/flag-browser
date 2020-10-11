@@ -8,6 +8,8 @@ Flag images taken from https://github.com/hjnilsson/country-flags (thank you).
 
 It is deployed here: https://flag-browser.netlify.app/
 
+Note: Guessing currently disabled due to... user feedback. If you want to use it, swap `App.js` with `App-with-guessing.js`.
+
 ## Development
 
 This project was built using react and redux.
